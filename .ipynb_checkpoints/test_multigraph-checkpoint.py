@@ -1,0 +1,28 @@
+
+from Graph_tool import multigraph as mg;
+from Graph_tool import direct_multigraph as dmg;
+G = mg(3,4);
+G = mg.set_vertex(G,["1","2","3"]);
+G = mg.set_edge(G,["12","23","22","33"]);
+mg.set_adjMatrix(G,0,1,1);
+mg.set_adjMatrix(G,1,2,1);
+mg.set_adjMatrix(G,1,1,1);
+mg.set_adjMatrix(G,2,2,1);
+mg.set_inMatrix(G,0,0,1);
+mg.set_inMatrix(G,1,1,1);
+mg.set_inMatrix(G,1,2,1);
+mg.set_inMatrix(G,2,3,1);
+mg.display_vertex(G);
+mg.display_edge(G);
+mg.display_adjMatrix(G);
+mg.display_inMatrix(G);
+del G;
+G = dmg(3,4);
+G = dmg.set_node(G,["1","2","3"]);
+G = dmg.set_arc(G,["(1,2)","(2,1)","(3,1)","(3,2)"]);
+dmg.display_arc(G);
+dmg.display_node(G);
+dmg.display_adjMatrix(G);
+dmg.display_inInMatrix(G);
+dmg.display_outInMatrix(G);
+del G;
